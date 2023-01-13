@@ -78,8 +78,7 @@ print(__name__)
 
 @webserver.route("/")
 def index():
-    msg = "Welcome! this is mainPage"
-    return msg
+    return render_template("main.html")
 
 @webserver.route("/recomm_My_")
 def recomm_My_():
@@ -109,6 +108,10 @@ def recomm_My_result():
      
     return pred
 
+@webserver.route("/face_")
+def face_():
+    msg = render_template("teachable.html")
+    return msg
 
 if __name__ == '__main__':
     webserver.run(host='0.0.0.0', port=5000, debug=True)
